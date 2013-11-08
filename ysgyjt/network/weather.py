@@ -16,8 +16,8 @@ import json
 
 api_address_base = 'http://m.weather.com.cn/data/'
 api_address_suffix = '.html'
-code_gy = '101010100'
-code_bj = '101260101'
+code_gy = '101260101'
+code_bj = '101010100'
 code_sh = '101020100'
 
 
@@ -70,9 +70,52 @@ class Weather():
         """
         return self.data["index_tr"]
 
+    def get_today_highest_temp(self):
+        """
+        get today highet temp.
+
+        return string
+
+        """
+        t1 = self.data['temp1']
+        return t1[:t1.index('~')]
+
+    def get_today_lowest_temp(self):
+        """
+        get today lowest temp.
+
+        return string
+
+        """
+        t1 = self.data['temp1']
+        return t1[t1.index('~') + 1:]
+
+    def get_tomorrow_highest_temp(self):
+        """
+        get tomorrow highet temp.
+
+        return string
+
+        """
+        t2 = self.data['temp2']
+        return t2[:t2.index('~')]
+
+    def get_tomorrow_lowest_temp(self):
+        """
+        get tomorrow lowest temp.
+
+        return string
+
+        """
+        t2 = self.data['temp2']
+        return t2[t2.index('~') + 1:]
 
 if __name__ == '__main__':
     wea = Weather()
     print 'today is ' + wea.get_weekday()
     print 'today car washing rate is ' + wea.get_xc()
     print 'today trip rate is ' + wea.get_tr()
+    print 'today highest temp is ' + wea.get_today_highest_temp()
+    print 'today lowest temp is ' + wea.get_today_lowest_temp()
+    print 'tomorrow highest temp is ' + wea.get_tomorrow_highest_temp()
+    print 'tomorrow lowest temp is ' + wea.get_tomorrow_lowest_temp()
