@@ -17,7 +17,7 @@ def testUserInsertSelect():
     """
     test user table insert & select.
 
-    test number 8613601844148
+    test number 8613601844147
 
     """
     user.insert_user_table("8613601844147")
