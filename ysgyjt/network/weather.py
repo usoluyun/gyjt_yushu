@@ -110,6 +110,33 @@ class Weather():
         t2 = self.data['temp2']
         return t2[t2.index('~') + 1:]
 
+    def get_city(self):
+        """
+        get city name.
+
+        return string
+
+        """
+        return self.data['city']
+
+    def get_today_weather(self):
+        """
+        get today's weather.
+
+        return string
+
+        """
+        return self.data['weather1']
+
+    def get_tomorrow_weather(self):
+        """
+        get tomorrow weather.
+
+        return string
+
+        """
+        return self.data['weather2']
+
 if __name__ == '__main__':
     wea = Weather()
     print 'today is ' + wea.get_weekday()
@@ -119,3 +146,6 @@ if __name__ == '__main__':
     print 'today lowest temp is ' + wea.get_today_lowest_temp()
     print 'tomorrow highest temp is ' + wea.get_tomorrow_highest_temp()
     print 'tomorrow lowest temp is ' + wea.get_tomorrow_lowest_temp()
+    print 'city is ' + wea.get_city()
+    print 'today weather is ' + wea.get_today_weather()
+    print 'tomorrow weather is ' + wea.get_tomorrow_weather()
