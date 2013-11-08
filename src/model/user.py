@@ -10,18 +10,14 @@ engine = create_engine("mysql+pymysql://gyjt:tjyg@121.199.55.129/gyjt")
 meta = tdb_sql.make_meta(engine)
 
 
-def get_user_table(metadata):
+def get_user_table():
     """
     return mapped table user.
 
     join_date and isdeleted are not included.
 
     """
-    return Table('user',
-                 metadata,
-                 Column('id', Integer, primary_key=True),
-                 Column('phone', Unicode(20)),
-                 Column('carrier', Unicode(20)))
+    return Table('user', meta, autoload=True, autoload_with=engine)
 
 
 def insert_user_table(phone):
@@ -31,8 +27,10 @@ def insert_user_table(phone):
     support mysql
 
     """
-    insertion = get_user_table(meta).insert()
-    insertion.execute(phone='phone')
+    saved_phone = select_user_table(phone)
+    if saved_phone.fetchone() is None:
+        insertion = get_user_table().insert()
+        insertion.execute(phone=phone)
 
 
 def select_user_table(phone):
@@ -42,7 +40,7 @@ def select_user_table(phone):
     return None if no data exists
 
     """
-    table = get_user_table(meta)
+    table = get_user_table()
     selection = table.select(table.c.phone == phone)
     return selection.execute()
 
