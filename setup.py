@@ -2,8 +2,9 @@ from distutils.core import setup
 
 setup(
     name='gyjt_yushu',
-    version='0.1',
-    packages=['ysgyjt', 'ysgyjt.db', 'ysgyjt.test', 'ysgyjt.model', 'ysgyjt.network'],
+    version='0.1.1',
+    packages=['ysgyjt', 'ysgyjt.db', 'ysgyjt.web', 'ysgyjt.test', 'ysgyjt.model',
+              'ysgyjt.network'],
     url='',
     license='MIT',
     author='Chester Lu',
