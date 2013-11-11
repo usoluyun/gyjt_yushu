@@ -11,7 +11,7 @@ using tornado
 import tornado.ioloop
 import tornado.web
 from ysgyjt.model import upstreammsg
-from appconfig import *
+from ysgyjt.appconfig import *
 
 
 class UpstreamHandler(tornado.web.RequestHandler):
