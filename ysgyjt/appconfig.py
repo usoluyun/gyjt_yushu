@@ -27,7 +27,7 @@ code_bj = '101010100'
 code_sh = '101020100'
 
 #messagecontent
-contenttemplate = "【气象台】%s今天%s，最高%s，最低%s，明天%s，最高%s，最低%s"
+contenttemplate = "【气象台】%s今天%s，最高%s，最低%s，明天%s，最高%s，最低%s【羽书科技】"
 
 #web setting
 web_port = 8888
