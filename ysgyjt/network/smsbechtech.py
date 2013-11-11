@@ -48,6 +48,7 @@ class Smsbechtech():
 if __name__ == '__main__':
     msg = Smsbechtech(Weather(), "13601844147")
     result = msg.send()
+    print msg.content
     print result
 
 
