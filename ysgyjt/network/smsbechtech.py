@@ -45,11 +45,17 @@ class Smsbechtech():
         url = msg_sendurl % (accesstoken, secretkey, self.mobile, self.content)
         return json.loads(ul.urlopen(url.encode('utf-8')).read())['result']
 
+    @staticmethod
+    def check_credit():
+        url = msg_crediturl % (accesstoken,secretkey)
+        return json.loads(ul.urlopen(url).read())['result']
+
 if __name__ == '__main__':
     msg = Smsbechtech(Weather(), "13601844147")
     result = msg.send()
     print msg.content
     print result
+    print Smsbechtech.check_credit()
 
 
 

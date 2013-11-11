@@ -10,6 +10,7 @@ db_url = "mysql+pymysql://gyjt:tjyg@121.199.55.129/gyjt"
 
 #sms bechtech settings
 msg_sendurl = "http://sms.bechtech.cn/Api/send/data/json?accesskey=%s&secretkey=%s&mobile=%s&content=%s"
+msg_crediturl = "http://sms.bechtech.cn/Api/getLeft/data/json?accesskey=%s&secretkey=%s"
 msg_upstream_recvtime = 'recvtime'
 msg_upstream_mobile = 'mobile'
 msg_upstream_content = 'content'
@@ -27,4 +28,7 @@ code_sh = '101020100'
 
 #messagecontent
 contenttemplate = "【气象台】%s今天%s，最高%s，最低%s，明天%s，最高%s，最低%s"
+
+#web setting
+web_port = 8888
 
