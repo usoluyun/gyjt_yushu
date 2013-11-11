@@ -1,17 +1,17 @@
+#coding: utf-8
 """
 Test upstream  function.
 
 using nose
 
 """
-
 #!/usr/bin/python
 #Filename:
 #author: Chester LU <usoluyun@gmail.com>
 
 
 from model.upstreammsg import *
-
+from network.smsbechtech import *
 
 def TestSaveUpstream():
     """
@@ -27,5 +27,10 @@ def TestSaveUpstream():
 
     assert result.fetchone() is not None
 
-if __name__ == '__main__':
-    TestSaveUpstream()
+
+def TestMessageSend():
+    msg = Smsbechtech(Weather(), '13601844147')
+
+    result = msg.send()
+
+    assert  result == "01"
