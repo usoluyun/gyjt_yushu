@@ -7,7 +7,10 @@ import threading
 import sys
 
 log_format = logging.Formatter('sql: %(message)s')
-metaecho = False #if print out in stdout
+
+#if print out in stdout
+metaecho = False
+
 
 class TransactionSet(threading.local):
     """A manager for SQL transactions.

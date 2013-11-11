@@ -30,3 +30,5 @@ class Smsbechtech():
 
     def __init__(self, weather):
         pass
+
+

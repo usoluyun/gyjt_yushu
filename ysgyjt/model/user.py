@@ -5,8 +5,9 @@
 
 from sqlalchemy import *
 from db import tdb_sql
+from appconfig import *
 
-engine = create_engine("mysql+pymysql://gyjt:tjyg@121.199.55.129/gyjt")
+engine = create_engine(db_url)
 meta = tdb_sql.make_meta(engine)
 
 

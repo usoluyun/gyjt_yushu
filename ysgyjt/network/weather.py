@@ -12,13 +12,9 @@ using info from m.weather.com.cn
 
 import urllib2 as ul
 import json
+from appconfig import *
 
 
-api_address_base = 'http://m.weather.com.cn/data/'
-api_address_suffix = '.html'
-code_gy = '101260101'
-code_bj = '101010100'
-code_sh = '101020100'
 
 
 def get_weather_json(geocode):
