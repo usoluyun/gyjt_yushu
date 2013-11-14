@@ -1,5 +1,5 @@
 '''
-add comments @ starbucks
+add comments @ starbucks offline
 '''
 from distutils.core import setup
 
