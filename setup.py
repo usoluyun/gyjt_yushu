@@ -1,5 +1,5 @@
 '''
-add comments @ starbucks
+add comments @ starbucks on github
 '''
 from distutils.core import setup
 
